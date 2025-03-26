@@ -1,0 +1,31 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color:white;
+    color: black;
+}
+
+.btnMinus {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;  /* Adjust size as needed */
+    height: 60px; /* Ensures a perfect circle */
+    border-radius: 50%; /* Makes it a circle */
+    border: 2px solid black; /* Circle border */
+    font-size: 20px; /* Adjust icon size */
+    cursor: pointer;
+    background-color: red;
+}
+
+.btnPlus {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;  /* Adjust size as needed */
+    height: 60px; /* Ensures a perfect circle */
+    border-radius: 50%; /* Makes it a circle */
+    border: 2px solid black; /* Circle border */
+    font-size: 20px; /* Adjust icon size */
+    cursor: pointer;
+    background-color: green;
+}

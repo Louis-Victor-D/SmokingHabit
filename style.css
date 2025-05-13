@@ -1,31 +1,143 @@
-body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color:white;
-    color: black;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-.btnMinus {
-    display: inline-flex;
+.header {
+    font-size: 30px;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#calender {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    width: 60px;  /* Adjust size as needed */
-    height: 60px; /* Ensures a perfect circle */
-    border-radius: 50%; /* Makes it a circle */
-    border: 2px solid black; /* Circle border */
-    font-size: 20px; /* Adjust icon size */
+    margin-bottom: 10px;
+}
+
+.controls button {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
     cursor: pointer;
-    background-color: red;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+.controls button:hover {
+    background: #ff3b3b;
+}
+
+.currentMonth {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.btnAdd {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #4caf50;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.btnAdd:hover {
+    background: #388e3c;
+}
+.number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.text {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btnMinus,
+.btnPlus {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    background: #ff6b6b;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btnPlus {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;  /* Adjust size as needed */
-    height: 60px; /* Ensures a perfect circle */
-    border-radius: 50%; /* Makes it a circle */
-    border: 2px solid black; /* Circle border */
-    font-size: 20px; /* Adjust icon size */
-    cursor: pointer;
-    background-color: green;
+    background: #4caf50;
 }
+
+.btnMinus:hover {
+    background: #ff3b3b;
+    transform: scale(1.1);
+}
+
+.btnPlus:hover {
+    background: #388e3c;
+    transform: scale(1.1);
+}
+
+.confirm {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #2196f3;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.confirm:hover {
+    background: #1976d2;
+}
+.today {
+    border: 2px solid blue;
+    background-color: lightblue;
+    color: black;
+  }

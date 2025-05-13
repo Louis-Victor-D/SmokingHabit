@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style src="style.css"></style>
-    <h1>Daily 🚬</h1>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <a href="details.html" class="btnAdd">Add</a>
-    <script src="index.js" type="module"></script>
+  <h1>Daily 🚬</h1>
+
+  <div id="calender">
+    <div class="controls">
+      <button id="prevMonth">⬅️</button>
+      <span class="currentMonth"></span>
+      <button id="nextMonth">➡️</button>
+    </div>
+    <div class="calendar-grid" id="calendarGrid"></div>
+  </div>
+
+  <a href="details.html" class="btnAdd">Add</a>
+  <script type="module" src="index.js"></script>
 </body>
 </html>

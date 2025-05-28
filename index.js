@@ -4,7 +4,7 @@ const prevBtn = document.getElementById('prevMonth');
 const nextBtn = document.getElementById('nextMonth');
 
 let date = new Date();
-let colorMap = {}; // You can expand this with localStorage later
+let colorMap = {}; 
 
 prevBtn.addEventListener('click', () => changeMonth(-1));
 nextBtn.addEventListener('click', () => changeMonth(1));

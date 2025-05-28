@@ -8,7 +8,7 @@ const btnMinus = document.querySelector('.btnMinus');
 
 function updateDisplay() {
   numberDisplay.textContent = `🚬 ${count}/10`;
-  textDisplay.textContent = count = 10 ? "You've hit your limit!" : "Try to smoke less, it's bad for you.";
+  textDisplay.textContent = count <  10 ?  "Try to smoke less, it's bad for you.":"You've hit your limit!";
   localStorage.setItem("cigaretteCount", count); 
 }
 

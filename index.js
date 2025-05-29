@@ -4,10 +4,27 @@ const prevBtn = document.getElementById('prevMonth');
 const nextBtn = document.getElementById('nextMonth');
 
 let date = new Date();
-let colorMap = {}; 
+const max = 10;
 
 prevBtn.addEventListener('click', () => changeMonth(-1));
 nextBtn.addEventListener('click', () => changeMonth(1));
+
+function getColorForCount(count) {
+  if (count === 0) return 'green';
+  if (count < max) return 'orange';
+  return 'red';
+}
+
+function getSmokingDataColorMap() {
+  const data = JSON.parse(localStorage.getItem("smokingData")) || {};
+  const map = {};
+
+  for (const [day, count] of Object.entries(data)) {
+    map[day] = getColorForCount(count);
+  }
+
+  return map;
+}
 
 function renderCalendar() {
   const year = date.getFullYear();
@@ -18,11 +35,18 @@ function renderCalendar() {
   const monthName = date.toLocaleString('default', { month: 'long' });
   currentMonthEl.textContent = `${monthName} ${year}`;
 
+  const smokingColorMap = getSmokingDataColorMap();
+
   calendarGrid.innerHTML = '';
   calendarGrid.style.display = 'grid';
   calendarGrid.style.gridTemplateColumns = 'repeat(7, 1fr)';
   calendarGrid.style.gap = '4px';
 
+  for (let i = 0; i < firstDay; i++) {
+    const emptyCell = document.createElement('div');
+    emptyCell.className = 'calendar-cell';
+    calendarGrid.appendChild(emptyCell);
+  }
 
   for (let day = 1; day <= lastDate; day++) {
     const cell = document.createElement('div');
@@ -31,7 +55,6 @@ function renderCalendar() {
     cell.textContent = day;
     cell.className = 'calendar-cell';
 
-    // Highlight today
     const today = new Date();
     const isToday =
       day === today.getDate() &&
@@ -42,22 +65,10 @@ function renderCalendar() {
       cell.classList.add('today');
     }
 
-    if (colorMap[isoDate]) {
-      cell.style.backgroundColor = colorMap[isoDate];
+    const color = smokingColorMap[isoDate];
+    if (color) {
+      cell.style.backgroundColor = color;
     }
-
-    cell.addEventListener('click', () => {
-      const colors = ['green', 'orange', 'red', ''];
-      const current = colorMap[isoDate] || '';
-      const nextColor = colors[(colors.indexOf(current) + 1) % colors.length];
-
-      if (nextColor) {
-        colorMap[isoDate] = nextColor;
-      } else {
-        delete colorMap[isoDate];
-      }
-      renderCalendar();
-    });
 
     calendarGrid.appendChild(cell);
   }
